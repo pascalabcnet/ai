@@ -5,10 +5,9 @@
 
 **ML PascalABC.NET** is a production-level machine learning and AI platform for PascalABC.NET.
 
-The project provides a complete, dependency-free ML stack designed for both educational and practical use. It brings modern data analysis, preprocessing, classical machine learning, model validation, metrics, pipelines, and linear algebra tools into the PascalABC.NET ecosystem.
+The platform is included in the PascalABC.NET distribution and is available to users as part of the language ecosystem. It provides a complete dependency-free ML stack: from tabular data storage and feature preprocessing to classical machine learning models, metrics, validation, pipelines, and the numerical linear algebra core.
 
-The goal of the project is to make machine learning accessible in PascalABC.NET without relying on external libraries, while preserving clear architecture, type safety, predictable behavior, and production-oriented design.
-
+The goal of the project is to make machine learning available in PascalABC.NET while preserving clear architecture, type safety, predictable behavior, and educational transparency.
 ## Website
 
 This repository contains the official website for the ML PascalABC.NET project:
@@ -192,11 +191,11 @@ The platform does not rely on external numerical, ML, DataFrame, or preprocessin
 
 This makes the system:
 
-* easier to distribute;
-* easier to install;
-* easier to study;
-* suitable for inclusion into the PascalABC.NET ecosystem;
-* transparent for educational use.
+* easy to distribute as part of PascalABC.NET;
+* easy to install and use without additional setup;
+* easy to study and explain;
+* suitable for educational and practical scenarios;
+* transparent for teaching machine learning, data analysis, and numerical algorithms.
 
 ### Explicit architecture
 
