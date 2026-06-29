@@ -6,7 +6,7 @@ title: Класс DataFrame
 
 В ML PascalABC.NET `DataFrame` используется как основной тип для работы с табличными данными: их можно загружать из CSV, просматривать, фильтровать, сортировать, группировать, объединять и готовить для моделей машинного обучения.
 
-<img src="/images/dataframe-structure.png" alt="Структура DataFrame" class="dataframe-structure-image" />
+<img src="../images/dataframe-structure.png" alt="Структура DataFrame" class="dataframe-structure-image" />
 
 ## Строки, столбцы и ячейки
 
