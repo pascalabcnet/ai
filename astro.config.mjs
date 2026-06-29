@@ -1,4 +1,5 @@
 // @ts-check
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
@@ -67,6 +68,24 @@ function rehypeBaseLinks() {
 		function visit(node) {
 			if (!node || typeof node !== 'object') return;
 
+			if (node.type === 'raw' && typeof node.value === 'string') {
+				node.value = withBaseHtml(node.value);
+			}
+
+			if (Array.isArray(node.attributes)) {
+				for (const attr of node.attributes) {
+					if (!attr || typeof attr !== 'object' || typeof attr.value !== 'string') continue;
+
+					if (attr.name === 'href' || attr.name === 'src') {
+						attr.value = withBaseUrl(attr.value);
+					}
+
+					if (attr.name === 'srcset' || attr.name === 'srcSet') {
+						attr.value = withBaseSrcSet(attr.value);
+					}
+				}
+			}
+
 			const props = node.properties;
 			if (props && typeof props === 'object') {
 				if (typeof props.href === 'string') {
@@ -95,6 +114,56 @@ function rehypeBaseLinks() {
 	};
 }
 
+function fixHtmlBaseUrls(html) {
+	return html
+		.replace(/\b(href|src)=(["'])(\/(?!\/)[^"']*)\2/g, (_, attr, quote, url) => {
+			return `${attr}=${quote}${withBaseUrl(url)}${quote}`;
+		})
+		.replace(/\b(srcset)=(["'])([^"']*)\2/gi, (_, attr, quote, value) => {
+			const fixed = value
+				.split(',')
+				.map((part) => {
+					const trimmed = part.trim();
+					if (!trimmed) return trimmed;
+
+					const [url, ...descriptor] = trimmed.split(/\s+/);
+					return [withBaseUrl(url), ...descriptor].join(' ');
+				})
+				.join(', ');
+
+			return `${attr}=${quote}${fixed}${quote}`;
+		});
+}
+
+async function* htmlFiles(dirUrl) {
+	for (const entry of await readdir(dirUrl, { withFileTypes: true })) {
+		if (entry.isDirectory()) {
+			yield* htmlFiles(new URL(`${entry.name}/`, dirUrl));
+		} else if (entry.isFile() && entry.name.endsWith('.html')) {
+			yield new URL(entry.name, dirUrl);
+		}
+	}
+}
+
+function baseHtmlLinksIntegration() {
+	return {
+		name: 'base-html-links',
+		hooks: {
+			'astro:build:done': async ({ dir }) => {
+				if (base === '/') return;
+
+				for await (const fileUrl of htmlFiles(dir)) {
+					const before = await readFile(fileUrl, 'utf8');
+					const after = fixHtmlBaseUrls(before);
+					if (after !== before) {
+						await writeFile(fileUrl, after);
+					}
+				}
+			},
+		},
+	};
+}
+
 // https://astro.build/config
 export default defineConfig({
         site: 'https://pascalabcnet.github.io',
@@ -108,6 +177,7 @@ export default defineConfig({
 		enabled: false,
 	},
 	integrations: [
+		baseHtmlLinksIntegration(),
 		starlight({
 			title: 'ML PascalABC.NET',
 			pagination: false,
