@@ -97,7 +97,7 @@ LinearAlgebraML
 Он реализует column-store DataFrame с типизированными столбцами:
 
 ```text
-Int / Float / Str / Bool
+Int / Float / Str / Bool / DateTime
 ```
 
 Основные возможности:
