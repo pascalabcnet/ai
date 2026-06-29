@@ -3,11 +3,92 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 const isProd = process.env.NODE_ENV === 'production';
+const base = isProd ? '/ai/' : '/';
+
+function withBaseUrl(url) {
+	if (!url) return url;
+	if (!url.startsWith('/')) return url;
+	if (url.startsWith('//')) return url;
+	if (base === '/') return url;
+	if (url === base.slice(0, -1) || url.startsWith(base)) return url;
+
+	return `${base.replace(/\/$/, '')}${url}`;
+}
+
+function remarkBaseLinks() {
+	return function transformer(tree) {
+		function visit(node) {
+			if (!node || typeof node !== 'object') return;
+
+			if ((node.type === 'link' || node.type === 'image') && typeof node.url === 'string') {
+				node.url = withBaseUrl(node.url);
+			}
+
+			if (Array.isArray(node.children)) {
+				for (const child of node.children) visit(child);
+			}
+		}
+
+		visit(tree);
+	};
+}
+
+function withBaseSrcSet(srcSet) {
+	if (!srcSet) return srcSet;
+
+	return srcSet
+		.split(',')
+		.map((part) => {
+			const trimmed = part.trim();
+			if (!trimmed) return trimmed;
+
+			const [url, ...descriptor] = trimmed.split(/\s+/);
+			return [withBaseUrl(url), ...descriptor].join(' ');
+		})
+		.join(', ');
+}
+
+function rehypeBaseLinks() {
+	return function transformer(tree) {
+		function visit(node) {
+			if (!node || typeof node !== 'object') return;
+
+			const props = node.properties;
+			if (props && typeof props === 'object') {
+				if (typeof props.href === 'string') {
+					props.href = withBaseUrl(props.href);
+				}
+
+				if (typeof props.src === 'string') {
+					props.src = withBaseUrl(props.src);
+				}
+
+				if (typeof props.srcSet === 'string') {
+					props.srcSet = withBaseSrcSet(props.srcSet);
+				}
+
+				if (typeof props.srcset === 'string') {
+					props.srcset = withBaseSrcSet(props.srcset);
+				}
+			}
+
+			if (Array.isArray(node.children)) {
+				for (const child of node.children) visit(child);
+			}
+		}
+
+		visit(tree);
+	};
+}
 
 // https://astro.build/config
 export default defineConfig({
         site: 'https://pascalabcnet.github.io',
-	base: isProd ? '/ai/' : '/',
+	base,
+	markdown: {
+		remarkPlugins: [remarkBaseLinks],
+		rehypePlugins: [rehypeBaseLinks],
+	},
 
 	devToolbar: {
 		enabled: false,
