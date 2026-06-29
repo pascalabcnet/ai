@@ -1,5 +1,8 @@
 # ML PascalABC.NET
 
+[Русская версия](README.ru.md)
+
+
 **ML PascalABC.NET** is a production-level machine learning and AI platform for PascalABC.NET.
 
 The project provides a complete, dependency-free ML stack designed for both educational and practical use. It brings modern data analysis, preprocessing, classical machine learning, model validation, metrics, pipelines, and linear algebra tools into the PascalABC.NET ecosystem.
