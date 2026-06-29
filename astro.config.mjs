@@ -2,8 +2,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-const isProd = process.env.NODE_ENV === 'production';
-const base = isProd ? '/ai/' : '/';
+const npmScript = process.env.npm_lifecycle_event;
+const isLocalDev = npmScript === 'dev' || npmScript === 'start';
+const base = process.env.ASTRO_BASE ?? (isLocalDev ? '/' : '/ai/');
 
 function withBaseUrl(url) {
 	if (!url) return url;
