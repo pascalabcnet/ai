@@ -271,4 +271,8 @@ The site is published as a GitHub Pages project site under the `/ai/` base path.
 
 ## License
 
-No license has been specified yet.
+ML PascalABC.NET is part of PascalABC.NET.
+
+PascalABC.NET is distributed under the GNU Lesser General Public License version 3, with the clarifications and exceptions described in the PascalABC.NET license agreement.
+
+The materials and source files in this repository are distributed under the same terms, unless explicitly stated otherwise.
