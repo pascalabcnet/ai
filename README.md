@@ -65,7 +65,7 @@ LinearAlgebraML
 It provides a column-store DataFrame implementation with typed columns:
 
 ```text
-Int / Float / Str / Bool
+Int / Float / Str / Bool / DateTime
 ```
 
 Key features include:
