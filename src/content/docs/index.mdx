@@ -1,0 +1,233 @@
+---
+title: ML PascalABC.NET
+description: Платформа машинного обучения для PascalABC.NET
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<section className="home-lead">
+  <div>
+    <p>
+      ML PascalABC.NET — библиотека анализа данных и машинного обучения для PascalABC.NET.
+    </p>
+    <ul>
+      <li>Работа с табличными данными</li>
+      <li>Классические ML-модели</li>
+      <li>Метрики качества и валидация моделей</li>
+      <li>Без внешних зависимостей</li>
+    </ul>
+  </div>
+</section>
+
+<section className="home-capabilities">
+  <h2>Возможности</h2>
+
+  <div className="capability-grid">
+    <a className="capability-card" href="/dataframe/">
+      <div className="capability-title"><span>📊</span> Табличные данные</div>
+      <p>Загрузка CSV, выбор столбцов, фильтрация, группировка и объединение таблиц.</p>
+    </a>
+    <a className="capability-card" href="/preprocessing/">
+      <div className="capability-title"><span>🔧</span> Подготовка признаков</div>
+      <p>Масштабирование, кодирование категорий и обработка пропусков.</p>
+    </a>
+    <a className="capability-card" href="/models/">
+      <div className="capability-title"><span>🧠</span> ML-модели</div>
+      <p>LogisticRegression, KNN, DecisionTree, RandomForest, GradientBoosting, KMeans и DBSCAN.</p>
+    </a>
+    <a className="capability-card" href="/getting-started/first-pipeline/">
+      <div className="capability-title"><span>🧩</span> Конвейеры</div>
+      <p>Объединение преобразований и моделей в единый ML-процесс.</p>
+    </a>
+    <a className="capability-card" href="/visualization/">
+      <div className="capability-title"><span>📈</span> Визуализация</div>
+      <p>Графики, диаграммы рассеяния и матрицы попарных графиков для анализа данных.</p>
+    </a>
+    <a className="capability-card" href="/datasets/">
+      <div className="capability-title"><span>🗃️</span> Наборы данных</div>
+      <p>Встроенные учебные датасеты для быстрых примеров и проверки моделей.</p>
+    </a>
+  </div>
+</section>
+
+## Примеры
+
+<Tabs>
+  <TabItem label="📋 Данные">
+
+```pascal
+// Загрузка, фильтрация и сортировка датасета
+uses MLABC;
+
+begin
+  var df := DataFrame.FromCsvText('''
+  name,age,score
+  Алиса,20,85
+  Боб,22,90
+  Чарли,21,78
+  ''');
+
+  df.Filter(row -> row['age'] >= 21)
+    .SortBy('score')
+    .Print;
+end.
+```
+
+<div className="example-output-title">Вывод</div>
+
+```text
+ name  age  score
+Чарли   21     78
+  Боб   22     90
+```
+
+  </TabItem>
+
+  <TabItem label="📈 Визуализация">
+
+```pascal
+// Матрица попарных графиков для датасета Iris
+uses MLABC, PlotML;
+
+begin
+  var ds := Datasets.Iris;
+  var df := ds.Data;
+
+  var X := df.ToMatrix(ds.Features);
+  var y := df.EncodeLabels(ds.Target);
+
+  Plot.PairPlot(X, y, ds.Features);
+end.
+```
+
+<div className="example-output-title">Вывод</div>
+
+<div className="plot-output">
+  <img src="/images/iris-pairplot.png" alt="Матрица попарных графиков для датасета Iris" />
+</div>
+
+  </TabItem>
+
+
+  <TabItem label="🔧 Подготовка">
+
+```pascal
+// Подготовка данных: заполнение пропусков
+// и кодирование категориального столбца
+uses MLABC;
+
+begin
+  var df := DataFrame.FromCsvText('''
+  name,age,city
+  Алиса,20,Москва
+  Боб,NA,Казань
+  Чарли,22,Москва
+  ''');
+
+  var imputer := new Imputer(['age']);
+  df := imputer.FitTransform(df);
+
+  var encoder := new OrdinalEncoder('city');
+  df := encoder.FitTransform(df);
+
+  df.Print;
+end.
+```
+
+<div className="example-output-title">Вывод</div>
+
+```text
+ name    age  city
+Алиса  20.00     0
+  Боб  21.00     1
+Чарли  22.00     0
+```
+
+  </TabItem>
+  <TabItem label="🧠 Модель">
+
+```pascal
+// Разбиение на тренировочную и тестовую выборки,
+// обучение модели и оценка точности предсказания
+uses MLABC;
+
+begin
+  var ds := Datasets.Iris;
+  var df := ds.Data;
+
+  var X := df.ToMatrix(ds.Features);
+  var y := df.EncodeLabels(ds.Target);
+
+  var (Xtrain, Xtest, ytrain, ytest) :=
+    Validation.TrainTestSplit(X, y, testRatio := 0.2, seed := 2);
+
+  var model := new LogisticRegression();
+  model.Fit(Xtrain, ytrain);
+
+  var pred := model.Predict(Xtest);
+  var acc := Metrics.Accuracy(ytest, pred);
+
+  Println('Accuracy:', acc:0:3);
+end.
+```
+
+<div className="example-output-title">Вывод</div>
+
+```text
+Accuracy: 0.967
+```
+
+  </TabItem>
+  <TabItem label="⚙️ Конвейер">
+
+```pascal
+// Конвейер машинного обучения: кодирование категориального признака
+// и шкалирование признаков разных масштабов
+// Без StandardScaler точность хуже
+uses MLABC;
+
+begin
+  var df := Datasets.MoscowHousing.Data;
+
+  var (trainDf, testDf) := df.TrainTestSplit(0.2, seed := 1);
+
+  var pipe := DataPipeline.BuildClassification(
+    'rooms',
+    ['price', 'area', 'renovation'],
+    new OrdinalEncoder('renovation'),
+    new StandardScaler,
+    new KNNClassifier(5)
+  );
+
+  pipe.Fit(trainDf);
+
+  var pred := pipe.Predict(testDf);
+  var y := pipe.GetEncodedLabels(testDf);
+
+  Println('Accuracy =', Metrics.Accuracy(y, pred):0:3);
+end.
+```
+
+<div className="example-output-title">Вывод</div>
+
+```text
+Accuracy = 0.653
+Без StandardScaler:
+Accuracy = 0.470
+```
+
+  </TabItem>
+</Tabs>
+
+<section className="home-sections">
+  <h2>С чего начать</h2>
+
+  <div className="home-links">
+    <a href="/getting-started/installation/">
+      <strong>Установка</strong>
+    </a>
+    <a href="/getting-started/first-model/">
+      <strong>Быстрый старт</strong>
+    </a>
+  </div>
+</section>
