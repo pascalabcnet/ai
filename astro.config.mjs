@@ -16,6 +16,15 @@ function withBaseUrl(url) {
 	return `${base.replace(/\/$/, '')}${url}`;
 }
 
+function withBaseHtml(html) {
+	if (!html || base === '/') return html;
+
+	return html.replace(
+		/\b(href|src)=(")(\/(?!\/|ai\/)[^"]*)(")/g,
+		(_, attr, openQuote, url, closeQuote) => `${attr}=${openQuote}${withBaseUrl(url)}${closeQuote}`
+	);
+}
+
 function remarkBaseLinks() {
 	return function transformer(tree) {
 		function visit(node) {
@@ -23,6 +32,10 @@ function remarkBaseLinks() {
 
 			if ((node.type === 'link' || node.type === 'image') && typeof node.url === 'string') {
 				node.url = withBaseUrl(node.url);
+			}
+
+			if (node.type === 'html' && typeof node.value === 'string') {
+				node.value = withBaseHtml(node.value);
 			}
 
 			if (Array.isArray(node.children)) {
