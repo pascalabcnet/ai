@@ -270,36 +270,8 @@ main h1 {
   display: none !important;
 }
 
-body:has(.sidebar-content a[href="/dataframe/loading/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/columns/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/filter-sort/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/statistics/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/grouping/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/join/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/datetime/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/missing/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/pandas/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/preprocessing/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/preprocessing/missing/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/preprocessing/encoding/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/preprocessing/scaling/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/getting-started/first-model/"][aria-current="page"]) .right-sidebar,
-body:has(.sidebar-content a[href="/dataframe/loading/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/columns/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/filter-sort/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/statistics/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/grouping/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/join/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/datetime/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/missing/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/dataframe/pandas/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/preprocessing/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/preprocessing/missing/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/preprocessing/encoding/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/preprocessing/scaling/"][aria-current="page"]) .right-sidebar-container,
-body:has(.sidebar-content a[href="/getting-started/first-model/"][aria-current="page"]) .right-sidebar-container {
+html[data-has-toc] .right-sidebar,
+html[data-has-toc] .right-sidebar-container {
   display: block !important;
 }
 
