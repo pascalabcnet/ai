@@ -262,19 +262,6 @@ main h1 {
   display: none !important;
 }
 
-.right-sidebar {
-  display: none !important;
-}
-
-.right-sidebar-container {
-  display: none !important;
-}
-
-html[data-has-toc] .right-sidebar,
-html[data-has-toc] .right-sidebar-container {
-  display: block !important;
-}
-
 .sidebar-content .top-level > li:first-child {
   position: sticky;
   top: 0;
