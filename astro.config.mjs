@@ -265,9 +265,19 @@ export default defineConfig({
 							label: 'Регрессия',
 							collapsed: true,
 							items: [
+								{ label: 'Обзор', link: '/models/regression/' },
 								{ label: 'LinearRegression', link: '/models/regression/linear-regression/' },
 								{ label: 'KNNRegressor', link: '/models/regression/knn-regressor/' },
 								{ label: 'DecisionTreeRegressor', link: '/models/regression/decision-tree-regressor/' },
+								{
+									label: 'Оценка качества',
+									collapsed: true,
+									items: [
+										{ label: 'MAE', link: '/metrics/mae/' },
+										{ label: 'MSE / RMSE', link: '/metrics/rmse/' },
+										{ label: 'R2 Score', link: '/metrics/r2/' },
+									],
+								},
 								{ label: 'RandomForestRegressor', link: '/models/regression/random-forest-regressor/' },
 								{ label: 'GradientBoostingRegressor', link: '/models/regression/gradient-boosting-regressor/' },
 							],
