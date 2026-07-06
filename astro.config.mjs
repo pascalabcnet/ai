@@ -257,7 +257,7 @@ export default defineConfig({
 										{ label: 'Precision / Recall / F1', link: '/metrics/precision-recall-f1/' },
 									],
 								},
-								{ label: 'RandomForestClassifier', link: '/models/classification/random-forest-classifier/' },
+								{ label: 'RandomForestClassifier', slug: 'models/classification/random-forest-classifier' },
 								{ label: 'GradientBoostingClassifier', link: '/models/classification/gradient-boosting-classifier/' },
 							],
 						},
