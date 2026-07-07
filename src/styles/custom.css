@@ -1,5 +1,7 @@
 /* ===== Общий текст ===== */
 
+@import 'katex/dist/katex.min.css';
+
 :root {
   --ml-accent: #315cf6;
   --ml-accent-strong: #1739b7;

@@ -3,6 +3,9 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 const npmScript = process.env.npm_lifecycle_event;
 const isLocalDev = npmScript === 'dev' || npmScript === 'start';
 const base = process.env.ASTRO_BASE ?? (isLocalDev ? '/' : '/ai/');
@@ -169,8 +172,8 @@ export default defineConfig({
         site: 'https://pascalabcnet.github.io',
 	base,
 	markdown: {
-		remarkPlugins: [remarkBaseLinks],
-		rehypePlugins: [rehypeBaseLinks],
+		remarkPlugins: [remarkBaseLinks, remarkMath,],
+		rehypePlugins: [rehypeBaseLinks, rehypeKatex,],
 	},
 
 	devToolbar: {
@@ -273,6 +276,7 @@ export default defineConfig({
 									label: 'Оценка качества',
 									collapsed: true,
 									items: [
+										{ label: 'Обзор', link: '/models/regression/evaluation/' },
 										{ label: 'MAE', link: '/metrics/mae/' },
 										{ label: 'MSE / RMSE', link: '/metrics/rmse/' },
 										{ label: 'R2 Score', link: '/metrics/r2/' },
