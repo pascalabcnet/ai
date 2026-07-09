@@ -290,8 +290,19 @@ export default defineConfig({
 							label: 'Кластеризация',
 							collapsed: true,
 							items: [
+								{ label: 'Обзор', link: '/models/clustering/' },
 								{ label: 'KMeans', link: '/models/clustering/kmeans/' },
+								{ label: 'Масштабирование', link: '/models/clustering/scaling/' },
 								{ label: 'DBSCAN', link: '/models/clustering/dbscan/' },
+								{
+									label: 'Оценка качества',
+									collapsed: true,
+									items: [
+										{ label: 'Silhouette Score', link: '/metrics/silhouette-score/' },
+										{ label: 'Rand Index и ARI', link: '/metrics/rand-index/' },
+									],
+								},
+								{ label: 'Примеры', link: '/models/clustering/examples/' },
 							],
 						},
 						{
