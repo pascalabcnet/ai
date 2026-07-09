@@ -278,7 +278,7 @@ export default defineConfig({
 									items: [
 										{ label: 'Обзор', link: '/models/regression/evaluation/' },
 										{ label: 'MAE', link: '/metrics/mae/' },
-										{ label: 'MSE / RMSE', link: '/metrics/rmse/' },
+										{ label: 'RMSE', link: '/metrics/rmse/' },
 										{ label: 'R2 Score', link: '/metrics/r2/' },
 									],
 								},
