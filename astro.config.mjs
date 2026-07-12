@@ -317,7 +317,11 @@ export default defineConfig({
 					label: '🧩 Конвейеры',
 					collapsed: true,
 					items: [
-						{ label: 'Конвейеры', slug: 'getting-started/first-pipeline' },
+						{ label: 'Обзор', link: '/pipelines/' },
+						{ label: 'Классификация', link: '/pipelines/classification/' },
+						{ label: 'Регрессия', link: '/pipelines/regression/' },
+						{ label: 'Кластеризация', link: '/pipelines/clustering/' },
+						{ label: 'MatrixPipeline', link: '/pipelines/matrix-pipeline/' },
 					],
 				},
 				{
