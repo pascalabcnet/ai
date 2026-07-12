@@ -504,3 +504,49 @@ main h1 {
   height: auto;
   border: 1px solid #d7dee8;
 }
+
+.clustering-image-table {
+  width: min(100%, 620px);
+  margin: 1.25rem 0;
+  border-collapse: separate;
+  border-spacing: 0.75rem 0;
+  table-layout: fixed;
+}
+
+.clustering-image-table td {
+  width: 50%;
+  padding: 0;
+  vertical-align: top;
+  border: 0;
+}
+
+.clustering-image-table img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d7dee8;
+}
+
+.clustering-objects-image {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #d7dee8;
+}
+
+.doc-image-wide {
+  display: block;
+  width: min(80%, 980px);
+  height: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #d7dee8;
+}
+
+.doc-image-medium {
+  display: block;
+  width: min(55%, 720px);
+  height: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #d7dee8;
+}

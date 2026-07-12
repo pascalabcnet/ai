@@ -299,10 +299,9 @@ export default defineConfig({
 									collapsed: true,
 									items: [
 										{ label: 'Silhouette Score', link: '/metrics/silhouette-score/' },
-										{ label: 'Rand Index и ARI', link: '/metrics/rand-index/' },
+										{ label: 'Adjusted Rand Index', link: '/metrics/adjusted-rand-index/' },
 									],
 								},
-								{ label: 'Примеры', link: '/models/clustering/examples/' },
 							],
 						},
 						{
