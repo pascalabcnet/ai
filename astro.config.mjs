@@ -335,7 +335,14 @@ export default defineConfig({
 					label: '🗃️ Наборы данных',
 					collapsed: true,
 					items: [
-						{ label: 'Встроенные датасеты', slug: 'datasets' },
+						{ label: 'Обзор', slug: 'datasets' },
+						{ label: 'Iris', link: '/datasets/iris/' },
+						{ label: 'MNIST Small', link: '/datasets/mnist-small/' },
+						{ label: 'MoscowHousing', link: '/datasets/moscow-housing/' },
+						{ label: 'RussianCities', link: '/datasets/russian-cities/' },
+						{ label: 'TitanicRu', link: '/datasets/titanic-ru/' },
+						{ label: 'UsedCarsPrice', link: '/datasets/used-cars-price/' },
+						{ label: 'Синтетические датасеты', link: '/datasets/synthetic/' },
 					],
 				},
 				{
