@@ -529,7 +529,8 @@ main h1 {
 
 .clustering-objects-image {
   display: block;
-  width: min(100%, 760px);
+  width: 100%;
+  max-width: 760px;
   height: auto;
   margin: 1.25rem 0;
   border: 1px solid #d7dee8;
@@ -537,7 +538,8 @@ main h1 {
 
 .doc-image-wide {
   display: block;
-  width: min(80%, 980px);
+  width: 80%;
+  max-width: 980px;
   height: auto;
   margin: 1.25rem 0;
   border: 1px solid #d7dee8;
@@ -545,7 +547,8 @@ main h1 {
 
 .doc-image-compact-wide {
   display: block;
-  width: min(65%, 820px);
+  width: 65%;
+  max-width: 820px;
   height: auto;
   margin: 1.25rem 0;
   border: 1px solid #d7dee8;
@@ -553,8 +556,19 @@ main h1 {
 
 .doc-image-medium {
   display: block;
-  width: min(55%, 720px);
+  width: 55%;
+  max-width: 720px;
   height: auto;
   margin: 1.25rem 0;
   border: 1px solid #d7dee8;
+}
+
+@media (max-width: 700px) {
+  .doc-image-wide,
+  .doc-image-compact-wide,
+  .doc-image-medium,
+  .clustering-objects-image {
+    width: 100%;
+    max-width: 100%;
+  }
 }
