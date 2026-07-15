@@ -345,13 +345,6 @@ export default defineConfig({
 						{ label: 'Синтетические датасеты', link: '/datasets/synthetic/' },
 					],
 				},
-				{
-					label: 'Примеры',
-					collapsed: true,
-					items: [
-						{ label: 'Примеры', slug: 'examples' },
-					],
-				},
 			],
 		}),
 	],
