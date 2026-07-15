@@ -47,7 +47,7 @@ DataFrame
   → LinearRegression
 ```
 
-Здесь `OneHotEncoder` и `OrdinalEncoder` преобразуют категориальные столбцы в числовые признаки, `Imputer` добавляет недостающие значения,`StandardScaler` масштабирует числовые признаки, а `LinearRegression` обучается предсказывать числовое значение.
+Здесь `OneHotEncoder` и `OrdinalEncoder` преобразуют категориальные признаки, `Imputer` заполняет пропуски, `StandardScaler` масштабирует числовые признаки, а `LinearRegression` обучается предсказывать значение целевой переменной.
 
 ## Fit и Predict
 
