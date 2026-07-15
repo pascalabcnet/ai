@@ -341,18 +341,20 @@ main h1 {
   margin: 0 !important;
   min-height: 7.2rem;
   padding: 1rem 1.05rem;
-  border: 1px solid var(--ml-border);
+  border: 1px solid #cfd6e3;
   border-radius: 6px;
   background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   color: inherit;
   text-decoration: none;
-  transition: border-color 120ms ease, background-color 120ms ease, transform 120ms ease;
+  transition: border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
 }
 
 .capability-card:hover,
 .capability-card:focus-visible {
   border-color: #b8c2d6;
   background: var(--ml-panel);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
   transform: translateY(-1px);
 }
 
@@ -363,7 +365,7 @@ main h1 {
 
 .capability-title {
   display: flex;
-  gap: 0.55rem;
+  gap: 0.65rem;
   align-items: center;
   margin-bottom: 0.45rem;
   color: #182230;
@@ -371,10 +373,17 @@ main h1 {
   font-weight: 650;
 }
 
-.capability-title span {
-  width: 1.35rem;
-  flex: 0 0 1.35rem;
-  text-align: center;
+.capability-title::before {
+  content: "";
+  width: 0.85rem;
+  height: 0.85rem;
+  flex: 0 0 0.85rem;
+  border-radius: 3px;
+  background:
+    linear-gradient(var(--ml-accent), var(--ml-accent)) 0 0 / 0.35rem 0.35rem no-repeat,
+    linear-gradient(#6b93f8, #6b93f8) 100% 0 / 0.35rem 0.35rem no-repeat,
+    linear-gradient(#6b93f8, #6b93f8) 0 100% / 0.35rem 0.35rem no-repeat,
+    linear-gradient(var(--ml-accent), var(--ml-accent)) 100% 100% / 0.35rem 0.35rem no-repeat;
 }
 
 .capability-grid p {
@@ -427,6 +436,7 @@ main h1 {
 :root[data-theme='dark'] .capability-card {
   border-color: #2c3442;
   background: #1d232d;
+  box-shadow: none;
 }
 
 :root[data-theme='dark'] .capability-card:hover,

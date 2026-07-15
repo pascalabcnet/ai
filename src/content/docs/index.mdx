@@ -1,5 +1,6 @@
 ---
 title: ML PascalABC.NET
+tableOfContents: false
 description: Платформа машинного обучения для PascalABC.NET
 ---
 
@@ -12,8 +13,8 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
     </p>
     <ul>
       <li>Работа с табличными данными</li>
-      <li>Классические ML-модели</li>
-      <li>Метрики качества и валидация моделей</li>
+      <li>Подготовка данных для машинного обучения</li>
+      <li>Обучение моделей и оценка качества</li>
       <li>Без внешних зависимостей</li>
     </ul>
   </div>
@@ -24,27 +25,27 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
   <div className="capability-grid">
     <a className="capability-card" href="/dataframe/">
-      <div className="capability-title"><span>📊</span> Табличные данные</div>
+      <div className="capability-title">Табличные данные</div>
       <p>Загрузка CSV, выбор столбцов, фильтрация, группировка и объединение таблиц.</p>
     </a>
     <a className="capability-card" href="/preprocessing/">
-      <div className="capability-title"><span>🔧</span> Подготовка признаков</div>
+      <div className="capability-title">Подготовка признаков</div>
       <p>Масштабирование, кодирование категорий и обработка пропусков.</p>
     </a>
     <a className="capability-card" href="/models/">
-      <div className="capability-title"><span>🧠</span> ML-модели</div>
+      <div className="capability-title">ML-модели</div>
       <p>LogisticRegression, KNN, DecisionTree, RandomForest, GradientBoosting, KMeans и DBSCAN.</p>
     </a>
     <a className="capability-card" href="/getting-started/first-pipeline/">
-      <div className="capability-title"><span>🧩</span> Конвейеры</div>
+      <div className="capability-title">Конвейеры</div>
       <p>Объединение преобразований и моделей в единый ML-процесс.</p>
     </a>
     <a className="capability-card" href="/visualization/">
-      <div className="capability-title"><span>📈</span> Визуализация</div>
+      <div className="capability-title">Визуализация</div>
       <p>Графики, диаграммы рассеяния и матрицы попарных графиков для анализа данных.</p>
     </a>
     <a className="capability-card" href="/datasets/">
-      <div className="capability-title"><span>🗃️</span> Наборы данных</div>
+      <div className="capability-title">Наборы данных</div>
       <p>Встроенные учебные датасеты для быстрых примеров и проверки моделей.</p>
     </a>
   </div>
@@ -53,7 +54,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 ## Примеры
 
 <Tabs>
-  <TabItem label="📋 Данные">
+  <TabItem label="Данные">
 
 ```pascal
 // Загрузка, фильтрация и сортировка датасета
@@ -83,7 +84,7 @@ end.
 
   </TabItem>
 
-  <TabItem label="📈 Визуализация">
+  <TabItem label="Визуализация">
 
 ```pascal
 // Матрица попарных графиков для датасета Iris
@@ -109,7 +110,7 @@ end.
   </TabItem>
 
 
-  <TabItem label="🔧 Подготовка">
+  <TabItem label="Подготовка">
 
 ```pascal
 // Подготовка данных: заполнение пропусков
@@ -144,7 +145,7 @@ end.
 ```
 
   </TabItem>
-  <TabItem label="🧠 Модель">
+  <TabItem label="Модель">
 
 ```pascal
 // Разбиение на тренировочную и тестовую выборки,
@@ -178,7 +179,7 @@ Accuracy: 0.967
 ```
 
   </TabItem>
-  <TabItem label="⚙️ Конвейер">
+  <TabItem label="Конвейер">
 
 ```pascal
 // Конвейер машинного обучения: кодирование категориального признака

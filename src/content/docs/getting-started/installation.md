@@ -1,5 +1,6 @@
 ---
 title: Установка
+tableOfContents: false
 description: Установка ML PascalABC.NET
 ---
 

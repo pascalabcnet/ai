@@ -197,14 +197,14 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: '🏠 Обзор',
+					label: 'Обзор',
 					collapsed: false,
 					items: [
 						{ label: 'О библиотеке', link: '/' },
 					],
 				},
 				{
-					label: '📋 Начало работы',
+					label: 'Начало работы',
 					collapsed: false,
 					items: [
 						{ label: 'Установка', slug: 'getting-started/installation' },
@@ -212,7 +212,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '📊 Данные',
+					label: 'Данные',
 					collapsed: true,
 					items: [
 						{ label: 'Класс DataFrame', slug: 'dataframe' },
@@ -228,7 +228,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '🔧 Подготовка данных',
+					label: 'Подготовка данных',
 					collapsed: true,
 					items: [
 						{ label: 'Обзор', link: '/preprocessing/' },
@@ -238,7 +238,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '🧠 Машинное обучение',
+					label: 'Машинное обучение',
 					collapsed: true,
 					items: [
 						{ label: 'Обзор задач', link: '/models/' },
@@ -314,7 +314,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '🧩 Конвейеры',
+					label: 'Конвейеры',
 					collapsed: true,
 					items: [
 						{ label: 'Обзор', link: '/pipelines/' },
@@ -325,14 +325,14 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '📈 Визуализация',
+					label: 'Визуализация',
 					collapsed: true,
 					items: [
 						{ label: 'PlotML', slug: 'visualization' },
 					],
 				},
 				{
-					label: '🗃️ Наборы данных',
+					label: 'Наборы данных',
 					collapsed: true,
 					items: [
 						{ label: 'Обзор', slug: 'datasets' },
@@ -346,7 +346,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '💡 Примеры',
+					label: 'Примеры',
 					collapsed: true,
 					items: [
 						{ label: 'Примеры', slug: 'examples' },
