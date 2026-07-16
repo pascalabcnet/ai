@@ -308,7 +308,7 @@ export default defineConfig({
 							label: 'Кросс-валидация',
 							collapsed: true,
 							items: [
-								{ label: 'Обзор', link: '/validation/' },
+								{ label: 'Обзор', link: '/validation/cross-validate/' },
 							],
 						},
 					],

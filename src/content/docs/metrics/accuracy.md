@@ -67,7 +67,7 @@ var acc := Metrics.Accuracy(ytest, ypred);
 
 На рисунке выше совпали 3 ответа из 4, поэтому `Accuracy = 3 / 4 = 0.75`.
 
-## Полный пример
+## Пример программы
 
 ```pascal
 uses MLABC;
