@@ -573,10 +573,20 @@ main h1 {
   border: 1px solid #d7dee8;
 }
 
+.plot-output-image {
+  display: block;
+  width: 60%;
+  max-width: 860px;
+  height: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #d7dee8;
+}
+
 @media (max-width: 700px) {
   .doc-image-wide,
   .doc-image-compact-wide,
   .doc-image-medium,
+  .plot-output-image,
   .clustering-objects-image {
     width: 100%;
     max-width: 100%;

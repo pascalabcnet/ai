@@ -25,7 +25,8 @@ begin
   var df := ds.Data;
 
   var X := df.ToMatrix(ds.Features);
-  var y := df.EncodeLabels(ds.Target);
+  var target := df.EncodeTarget(ds.Target);
+  var y := target.Labels;
 
   var (Xtrain, Xtest, ytrain, ytest) :=
     Validation.TrainTestSplit(X, y, testRatio := 0.2, seed := 3);
@@ -44,7 +45,7 @@ end.
 
 - `Datasets.Iris` загружает небольшой встроенный датасет с измерениями цветков ириса.
 - `ToMatrix` превращает выбранные признаки в числовую матрицу.
-- `EncodeLabels` кодирует целевой столбец с названиями классов.
+- `EncodeTarget` кодирует целевой столбец с названиями классов в числовые метки.
 - `TrainTestSplit` отделяет часть данных для проверки качества модели.
 - `LogisticRegression` обучается на тренировочной выборке.
 - `Predict` получает предсказания для тестовой выборки.

@@ -251,7 +251,7 @@ export default defineConfig({
 								{ label: 'KNNClassifier', link: '/models/classification/knn-classifier/' },
 								{ label: 'DecisionTreeClassifier', link: '/models/classification/decision-tree-classifier/' },
 								{
-									label: 'Оценка качества',
+									label: 'Метрики качества',
 									collapsed: true,
 									items: [
 										{ label: 'Train/Test Split', link: '/validation/train-test-split/' },
@@ -273,7 +273,7 @@ export default defineConfig({
 								{ label: 'KNNRegressor', link: '/models/regression/knn-regressor/' },
 								{ label: 'DecisionTreeRegressor', link: '/models/regression/decision-tree-regressor/' },
 								{
-									label: 'Оценка качества',
+									label: 'Метрики качества',
 									collapsed: true,
 									items: [
 										{ label: 'Обзор', link: '/models/regression/evaluation/' },
@@ -295,7 +295,7 @@ export default defineConfig({
 								{ label: 'Масштабирование', link: '/models/clustering/scaling/' },
 								{ label: 'DBSCAN', link: '/models/clustering/dbscan/' },
 								{
-									label: 'Оценка качества',
+									label: 'Метрики качества',
 									collapsed: true,
 									items: [
 										{ label: 'Silhouette Score', link: '/metrics/silhouette-score/' },
@@ -305,10 +305,11 @@ export default defineConfig({
 							],
 						},
 						{
-							label: 'Кросс-валидация',
+							label: 'Надёжность модели',
 							collapsed: true,
 							items: [
-								{ label: 'Обзор', link: '/validation/cross-validate/' },
+								{ label: 'Переобучение и недообучение', link: '/validation/overfitting-underfitting/' },
+								{ label: 'Кросс-валидация', link: '/validation/cross-validate/' },
 							],
 						},
 					],
