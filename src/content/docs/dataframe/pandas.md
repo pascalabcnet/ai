@@ -63,10 +63,7 @@ df[(df['Department']=='IT') & (df['Salary']>80000)]
 ```
 
 ```pascal
-df.Filter(r ->
-  (r['Department'] = 'IT') and
-  (r['Salary'] > 80000)
-)
+df.Filter(r -> (r['Department'] = 'IT') and (r['Salary'] > 80000))
 ```
 
 ## Сортировка

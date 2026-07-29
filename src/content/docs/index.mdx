@@ -160,10 +160,10 @@ begin
   var df := ds.Data;
 
   var X := df.ToMatrix(ds.Features);
-  var y := df.EncodeLabels(ds.Target);
+  var y := df.EncodeTarget(ds.Target);
 
   var (Xtrain, Xtest, ytrain, ytest) :=
-    Validation.TrainTestSplit(X, y, testRatio := 0.2, seed := 2);
+    Validation.TrainTestSplit(X, y.Labels, testRatio := 0.2, seed := 2);
 
   var model := new LogisticRegression();
   model.Fit(Xtrain, ytrain);

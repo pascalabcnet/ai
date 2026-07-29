@@ -310,6 +310,8 @@ export default defineConfig({
 							items: [
 								{ label: 'Переобучение и недообучение', link: '/validation/overfitting-underfitting/' },
 								{ label: 'Кросс-валидация', link: '/validation/cross-validate/' },
+								{ label: 'Валидационные кривые', link: '/validation/validation-curves/' },
+								{ label: 'Кривые обучения', link: '/validation/learning-curves/' },
 							],
 						},
 					],
