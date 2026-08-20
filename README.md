@@ -16,7 +16,7 @@ This repository contains the official website for the ML PascalABC.NET project:
 https://pascalabcnet.github.io/ai/
 ```
 
-The site serves as the public entry point for the project: documentation, examples, architectural notes, educational materials, and project overview.
+The site serves as the public entry point for the project: documentation, architectural notes, educational materials, and project overview.
 
 ## About the project
 
@@ -227,7 +227,6 @@ The website is the main public location for describing:
 * the purpose of the project;
 * platform architecture;
 * supported modules;
-* examples;
 * tutorials;
 * documentation;
 * educational materials;
