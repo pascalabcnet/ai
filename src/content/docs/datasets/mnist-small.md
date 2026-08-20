@@ -144,7 +144,8 @@ begin
   var df := ds.Data;
 
   var X := df.ToMatrix(ds.Features);
-  var y := df.EncodeLabels(ds.Target);
+  var target := df.EncodeTarget(ds.Target);
+  var y := target.Labels;
 
   var (Xtrain, Xtest, ytrain, ytest) :=
     Validation.TrainTestSplit(X, y, testRatio := 0.2, seed := 42);
@@ -190,10 +191,11 @@ begin
   var df := ds.Data;
 
   var X := df.ToMatrix(ds.Features);
-  var y := df.EncodeTarget(ds.Target);
+  var target := df.EncodeTarget(ds.Target);
+  var y := target.Labels;
 
   var (Xtrain, Xtest, ytrain, ytest) :=
-    Validation.TrainTestSplit(X, y.Labels, testRatio := 0.2, seed := 42);
+    Validation.TrainTestSplit(X, y, testRatio := 0.2, seed := 42);
 
   var model := new RandomForestClassifier(
     nTrees := 20,

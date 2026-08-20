@@ -111,7 +111,7 @@ Recall = TP / (TP + FN)
 
 ## Метрика F1
 
-`F1` объединяет `Precision` и `Recall` одну метрику.
+`F1` объединяет `Precision` и `Recall` в одну метрику.
 
 ```text
 F1 = 2 * Precision * Recall / (Precision + Recall)
