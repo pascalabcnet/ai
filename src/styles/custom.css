@@ -86,6 +86,28 @@ main h1 {
   line-height: 1.25 !important;
 }
 
+.expressive-code .copy,
+.expressive-code button[title*="Copy"],
+.expressive-code button[aria-label*="Copy"],
+.expressive-code button[title*="коп"],
+.expressive-code button[aria-label*="коп"] {
+  width: 2rem !important;
+  height: 2rem !important;
+  min-width: 2rem !important;
+  min-height: 2rem !important;
+  padding: 0.35rem !important;
+  border-radius: 4px !important;
+}
+
+.expressive-code .copy svg,
+.expressive-code button[title*="Copy"] svg,
+.expressive-code button[aria-label*="Copy"] svg,
+.expressive-code button[title*="коп"] svg,
+.expressive-code button[aria-label*="коп"] svg {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
 /* ===== Вкладки ===== */
 
 .sl-markdown-content starlight-tabs {
@@ -558,6 +580,33 @@ main h1 {
   .sl-markdown-content ul,
   .sl-markdown-content ol {
     padding-left: 1.15rem !important;
+  }
+
+  .expressive-code pre {
+    font-size: 0.78rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .expressive-code .copy,
+  .expressive-code button[title*="Copy"],
+  .expressive-code button[aria-label*="Copy"],
+  .expressive-code button[title*="коп"],
+  .expressive-code button[aria-label*="коп"] {
+    width: 1.55rem !important;
+    height: 1.55rem !important;
+    min-width: 1.55rem !important;
+    min-height: 1.55rem !important;
+    padding: 0.25rem !important;
+    opacity: 0.82;
+  }
+
+  .expressive-code .copy svg,
+  .expressive-code button[title*="Copy"] svg,
+  .expressive-code button[aria-label*="Copy"] svg,
+  .expressive-code button[title*="коп"] svg,
+  .expressive-code button[aria-label*="коп"] svg {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
   }
 
   .home-lead {
