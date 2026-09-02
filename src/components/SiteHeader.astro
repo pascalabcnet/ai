@@ -26,6 +26,7 @@ const logoSrc = `${baseUrl}images/ml-matrix-icon.svg`;
 			<img class="brand-icon" src={logoSrc} alt="" width="120" height="120" />
 			<span class="brand-text">
 				<span class="brand-ml">ML</span>
+				<span class="brand-mobile-rest">ABC</span>
 				<span class="brand-rest">PascalABC.NET</span>
 			</span>
 		</a>
@@ -115,6 +116,12 @@ const logoSrc = `${baseUrl}images/ml-matrix-icon.svg`;
 			text-overflow: ellipsis;
 		}
 
+		.brand-mobile-rest {
+			display: none;
+			color: var(--sl-color-gray-1);
+			font-weight: 560;
+		}
+
 		.top-nav {
 			display: none;
 			align-items: center;
@@ -186,6 +193,10 @@ const logoSrc = `${baseUrl}images/ml-matrix-icon.svg`;
 
 			.brand-rest {
 				display: none;
+			}
+
+			.brand-mobile-rest {
+				display: inline;
 			}
 
 			.search-wrapper {
