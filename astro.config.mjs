@@ -185,6 +185,13 @@ export default defineConfig({
 			title: 'ML PascalABC.NET',
 			pagination: false,
 			customCss: ['./src/styles/custom.css'],
+			head: [
+				{ tag: 'link', attrs: { rel: 'icon', href: withBaseUrl('/favicon.ico'), sizes: 'any' } },
+				{ tag: 'link', attrs: { rel: 'icon', href: withBaseUrl('/favicon.svg'), type: 'image/svg+xml' } },
+				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: withBaseUrl('/apple-touch-icon.png'), sizes: '180x180' } },
+				{ tag: 'link', attrs: { rel: 'manifest', href: withBaseUrl('/site.webmanifest') } },
+				{ tag: 'meta', attrs: { name: 'theme-color', content: '#f7f8fb' } },
+			],
 			components: {
 				Header: './src/components/SiteHeader.astro',
 			},

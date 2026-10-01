@@ -32,6 +32,6 @@
 
   <!-- Bottom-right outlined cell -->
   <rect x="80" y="80" width="27" height="27" rx="5"
-        fill="none" stroke="#4257F4" stroke-width="2.5"/>
+        fill="#ffffff" stroke="#4257F4" stroke-width="2.5"/>
   <circle cx="93.5" cy="93.5" r="4" fill="#4257F4"/>
 </svg>
